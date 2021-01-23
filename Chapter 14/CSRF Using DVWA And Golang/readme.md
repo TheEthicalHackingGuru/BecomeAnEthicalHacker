@@ -15,31 +15,26 @@ kali@kali:/go/src/csrfapp$ openssl req -newkey rsa:4096 \
 
 
 # Usage:
-1.
+1. Build the app and run it.
 kali@kali:/go/src$ cd csrfapp
 kali@kali:/go/src/csrfapp$ go run main.go 
 
-2.
-Start Burp Suite and turn on Foxy Proxy if you have it set up in your browser yet.
+2. Start Burp Suite and turn on Foxy Proxy if you have it set up in your browser yet.
 
-3.
-Login to DVWA by viewing it's ip address in a browser in Kali Linux.
+3. Login to DVWA by viewing it's ip address in a browser in Kali Linux.
 For example, http://10.0.50.33/dvwa then login using the default credentials.
 
-4.
-Set Security Level in DVWA to low:
+4. Set Security Level in DVWA to low:
 
 Username: admin
 Security Level: low
 PHPIDS: disabled
 
-5.
-Then open up http://localhost:8000 in a browser in Kali Linux.
+5. Open up http://localhost:8000 in a browser in Kali Linux.
 Send the GET the request for the /Prizepage page.
 Then send the next request which will use a CSRF attack to change the password for the DVWA admin account.
 
-6.
-Notice how the PHPSESSID variable is the same in the attack request as it was when you logged into DVWA.
+6. Notice how the PHPSESSID variable is the same in the attack request as it was when you logged into DVWA.
 PHPSESSID=
 
-Finally login to DVWA once more using admin:beh to see how you have just changed the password using CSRF attack.
+7. Finally login to DVWA once more using admin:beh to see how you have just changed the password using CSRF attack.
