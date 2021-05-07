@@ -18,14 +18,12 @@ def xor_str(data, xor_key):
 
 class request_handler(http.server.BaseHTTPRequestHandler):
    def do_GET(sf): # sf is "self"
-     # ask for input from client
-     remote_cmd = raw_input("Shell> ")
+   
      # send hey! I got your request to client
      sf.send_response(200)
      # no more headers
      sf.end_headers()
-     # write the response to the client
-     sf.wfile.write(remote_cmd)
+    
    def do_POST(sf):
      sf.send_response(200)
      sf.end_headers()
