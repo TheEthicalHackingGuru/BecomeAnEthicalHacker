@@ -1,8 +1,8 @@
 #include <unistd.h>
 
-Int main()
+int main()
 {
    setuid(0);
    execl(“/bin/sh”,”/bin/bash”, NULL);
-   Return 0;
+   return 0;
 }
